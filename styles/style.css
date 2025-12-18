@@ -4,4 +4,52 @@
   background-image: var(--page_bg-image);
   background-position: center;
   background-attachment: fixed;
+  background-color: #000028;
+}
+
+.header {
+  display: grid;
+  block-size: 100vh;
+  min-block-size: 668px;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  block-size: 25px;
+  inline-size: 25px;
+  border: #FF0070 1px solid;
+  border-bottom: none;
+  border-left: none;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  block-size: 25px;
+  inline-size: 25px;
+  border: #FF0070 1px solid;
+  border-top: none;
+  border-right: none;
+}
+
+.header__decorated-record {
+  gap: 10px;
+  display: flex;
+  position: absolute;
+  right: 19px;
+  top: 10px;
+}
+
+.header__decorated-record:first-child::after {
+  align-self: center;
+  content: "";
+  block-size: 9px;
+  inline-size: 9px;
+  border-radius: 50%;
+  background-color: #FF0070;
 }
