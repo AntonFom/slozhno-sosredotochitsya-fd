@@ -5,12 +5,16 @@
   background-position: center;
   background-attachment: fixed;
   background-color: #000028;
+  font-family: 'IBM Plex mono', sans-serif;
+  padding: 10px;
+  font-size: 18px;
 }
 
 .header {
+  position: relative;
   display: grid;
   block-size: 100vh;
-  min-block-size: 668px;
+  max-block-size: 668px;
 }
 
 .decorated-zone::before {
@@ -40,16 +44,49 @@
 .header__decorated-record {
   gap: 10px;
   display: flex;
+  align-items: center;
   position: absolute;
-  right: 19px;
-  top: 10px;
+  inline-size: 52px;
+  block-size: 26px;
+  right: 9px;
 }
 
 .header__decorated-record:first-child::after {
-  align-self: center;
   content: "";
   block-size: 9px;
   inline-size: 9px;
   border-radius: 50%;
   background-color: #FF0070;
+}
+
+.title {
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  color: #DB00FF;
+  line-height: 83%;
+  text-shadow: 4px 4px 0 var(--accent-color);
+  font-weight: bold;
+}
+
+.section {
+  margin-block-end: 50px;
+}
+
+.section__title {
+  color: #FF0070;
+  margin-bottom: 20px;
+  line-height: 23.4px;
+}
+
+.section_paragraph {
+  color: #F1B2CE;
+  margin-block-start: 10px;
+  margin-block-end: 20px;
+}
+
+.title-decor {
+  background-color: #FF0070;
+  color: #000028;
+  font-weight: bold;
+  block-size: min-content;
+  line-height: 23.4px;
 }
