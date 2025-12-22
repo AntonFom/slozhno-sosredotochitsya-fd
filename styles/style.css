@@ -1,30 +1,27 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  background-image: var(--page_bg-image);
+  background-image: var(--bg-image);
   background-position: center;
   background-attachment: fixed;
-  background-color: #000028;
+  background-color: var(--bg-color);
   font-family: 'IBM Plex mono', sans-serif;
-  padding: 10px;
-  font-size: 18px;
+  padding: 0 10px;
 }
 
 .header {
   position: relative;
   display: grid;
   block-size: 100vh;
-  max-block-size: 668px;
+  min-block-size: 668px;
 }
 
 .decorated-zone::before {
   content: "";
   position: absolute;
   right: 0;
-  top: 0;
+  top: 10px;
   block-size: 25px;
   inline-size: 25px;
-  border: #FF0070 1px solid;
+  border: var(--decorations-color) 1px solid;
   border-bottom: none;
   border-left: none;
 }
@@ -32,11 +29,11 @@
 .decorated-zone::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 0;
   block-size: 25px;
   inline-size: 25px;
-  border: #FF0070 1px solid;
+  border: var(--decorations-color) 1px solid;
   border-top: none;
   border-right: none;
 }
@@ -46,47 +43,138 @@
   display: flex;
   align-items: center;
   position: absolute;
+  top: 8px;
   inline-size: 52px;
   block-size: 26px;
-  right: 9px;
+  right: 4px;
 }
 
-.header__decorated-record:first-child::after {
+.header__decorated-record::after {
   content: "";
   block-size: 9px;
   inline-size: 9px;
   border-radius: 50%;
-  background-color: #FF0070;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
 }
 
 .title {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-  color: #DB00FF;
+  color: var(--title-color);
   line-height: 83%;
   text-shadow: 4px 4px 0 var(--accent-color);
   font-weight: bold;
 }
 
 .section {
+  display: grid;
   margin-block-end: 50px;
+  gap: 20px;
+}
+
+.section ul {
+  display: grid;
+  gap: 20px ;
+}
+
+.section li {
+  display: grid;
+  gap: 10px;
 }
 
 .section__title {
-  color: #FF0070;
-  margin-bottom: 20px;
+  color: var(--title-section-color);
   line-height: 23.4px;
+  font-size: 18px;
 }
 
 .section_paragraph {
-  color: #F1B2CE;
-  margin-block-start: 10px;
-  margin-block-end: 20px;
+  color: var(--paragraph-color);
+  font-size: 18px;
+}
+
+.section_paragraph a {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.section a:hover {
+  border-block-end: 1px solid var(--paragraph-color);
+}
+
+.section a:focus {
+  outline: none;
+}
+
+.section a:focus-visible {
+  outline: 1px solid #FF007066;
 }
 
 .title-decor {
-  background-color: #FF0070;
-  color: #000028;
+  background-color: var(--accent-color);
+  color: var(--title-card-color);
+  font-size: 18px;
   font-weight: bold;
   block-size: min-content;
   line-height: 23.4px;
+}
+
+.decor-tips h3 {
+  font-weight: 400;
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+}
+
+.section__gallery-images {
+  width: 100%;
+}
+
+.footer {
+  position: relative;
+  height: 100vh;
+  min-block-size: 668px;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+}
+
+@media (width > 768px) {
+  .header {
+    min-block-size: 768px;
+  }
+
+  .header__paragraph {
+    max-inline-size: 364px;
+    justify-self: end;
+  }
+
+  .section:nth-of-type(2n + 1) {
+    grid-template-columns: minmax(236px, 315px) 1fr;
+  }
+
+  .section__title {
+    grid-row: span 2;
+  }
+
+  .gallery {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-template-areas: 
+    "sunset sunset ice-cream"
+    "tape books ice-cream"
+    "tape street street";
+  }
+}
+
+@media (width > 1024px) {
+
 }
