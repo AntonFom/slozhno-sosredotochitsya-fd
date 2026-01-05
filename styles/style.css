@@ -67,7 +67,7 @@
   text-transform: lowercase;
 }
 
-.header__theme-menu-button:focus{
+.header__theme-menu-button:focus {
   outline: none;
 }
 
@@ -75,7 +75,7 @@
   border-bottom: 1px solid var(--decorations-color);
 }
 
-.header__theme-menu-button:hover{
+.header__theme-menu-button:hover {
   outline: 1px solid var(--color-hover-effect-menu-theme);
 }
 
@@ -326,4 +326,4 @@
   .section h2 {
     inline-size: 315px;
   }
-} /*Тест*/
+}

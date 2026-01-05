@@ -16,7 +16,7 @@
   --accent-color: #FF0070;
 }
 
-:root.theme-dark .header__decorated-record{
+:root.theme-dark .header__decorated-record {
   display: flex;
   color: var(--decorations-color);
 }
